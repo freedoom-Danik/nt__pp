@@ -1,0 +1,185 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Items>
+  <!-- Wearable Items -->
+  <!-- Corrective Glasses -->
+  <Item identifier="it_glasses" aliases="eyeglasses" scale="0.17" category="Equipment" tags="smallitem,clothing" cargocontaineridentifier="metalcrate" impactsoundtag="impact_metal_light">
+    <Price baseprice="150" soldbydefault="true">
+      <Price storeidentifier="merchantmedical" />
+    </Price>
+    <Fabricate suitablefabricators="fabricator" requiredtime="25">
+      <RequiredSkill identifier="mechanical" level="30" />
+      <RequiredSkill identifier="medical" level="40" />
+      <RequiredItem identifier="plastic" amount="2" />
+      <RequiredItem identifier="steel" amount="1" />
+    </Fabricate>
+    <Deconstruct time="7">
+      <Item identifier="iron" />
+      <Item identifier="plastic" />
+    </Deconstruct>
+    <InventoryIcon texture="%ModDir%/Textures/ItemIcons.png" sourcerect="768,640,128,128" origin="0.5,0.5" />
+    <Sprite name="Corrective glasses" texture="%ModDir%/Textures/ItemIcons.png" sourcerect="768,640,128,128" depth="0.6" origin="0.5,0.5" />
+    <Body width="30" height="15" density="30" />
+    <Wearable limbtype="Head" slots="Any,Head" msg="ItemMsgPickUpSelect">
+      <sprite name="Corrective glasses wearable" texture="%ModDir%/Textures/ItemIcons.png" limb="Head" inheritlimbdepth="true" inheritscale="true" ignorelimbscale="true" scale="0.29" sourcerect="768,512,128,128" origin="0.525,0.51" />
+      <StatusEffect type="OnWearing" target="Character">
+        <Affliction identifier="mc_correctives" amount="100" />
+      </StatusEffect>
+    </Wearable>
+  </Item>
+  <!-- Aviator Glasses -->
+  <Item identifier="it_aviators" aliases="aviatorglasses" scale="0.17" category="Equipment" tags="smallitem,clothing" cargocontaineridentifier="metalcrate" impactsoundtag="impact_metal_light">
+    <PreferredContainer primary="secarmcab" secondary="armcab" />
+    <PreferredContainer secondary="wrecksecarmcab" spawnprobability="0.001" />
+    <Price baseprice="1500">
+      <Price locationtype="military" multiplier="3" maxavailable="1" />
+    </Price>
+    <Deconstruct time="25">
+      <Item identifier="iron" />
+      <Item identifier="plastic" />
+    </Deconstruct>
+    <InventoryIcon texture="%ModDir%/Textures/ItemIcons.png" sourcerect="896,640,128,128" origin="0.5,0.5" />
+    <Sprite name="Aviator Glasses" texture="%ModDir%/Textures/ItemIcons.png" sourcerect="896,640,128,128" depth="0.6" origin="0.5,0.5" />
+    <Body width="30" height="15" density="30" />
+    <Wearable limbtype="Head" slots="Any,Head" msg="ItemMsgPickUpSelect">
+      <SkillModifier skillidentifier="helm" skillvalue="50" />
+      <SkillModifier skillidentifier="weapons" skillvalue="-75" />
+      <SkillModifier skillidentifier="medical" skillvalue="-75" />
+      <SkillModifier skillidentifier="electrical" skillvalue="-75" />
+      <SkillModifier skillidentifier="mechanical" skillvalue="-75" />
+      <sprite name="Aviator Glasses Wearable" texture="%ModDir%/Textures/ItemIcons.png" limb="Head" inheritlimbdepth="true" inheritscale="true" ignorelimbscale="true" scale="0.29" sourcerect="896,512,128,128" origin="0.52,0.525" />
+    </Wearable>
+  </Item>
+  <!-- Eyepatch /NEEDS MECHANICS/ -->
+  <Item identifier="it_eyepatch" scale="0.17" category="Equipment" tags="smallitem,clothing" cargocontaineridentifier="metalcrate" impactsoundtag="impact_soft">
+    <PreferredContainer primary="secarmcab" secondary="armcab" />
+    <PreferredContainer secondary="wrecksecarmcab" spawnprobability="0.001" />
+    <!--
+        <Price
+            baseprice="1500">
+            <Price
+                locationtype="military"
+                multiplier="3"
+                maxavailable="1" />
+        </Price> -->
+    <Deconstruct time="25">
+      <Item identifier="iron" />
+      <Item identifier="plastic" />
+    </Deconstruct>
+    <InventoryIcon texture="%ModDir%/Textures/ItemIcons.png" sourcerect="768,384,128,128" origin="0.5,0.5" />
+    <Sprite name="Eyepatch" texture="%ModDir%/Textures/ItemIcons.png" sourcerect="768,256,128,128" depth="0.6" origin="0.5,0.5" />
+    <Body width="30" height="15" density="30" />
+    <Wearable limbtype="Head" slots="Any,Head" msg="ItemMsgPickUpSelect">
+      <SkillModifier skillidentifier="helm" skillvalue="50" />
+      <SkillModifier skillidentifier="weapons" skillvalue="-75" />
+      <SkillModifier skillidentifier="medical" skillvalue="-75" />
+      <SkillModifier skillidentifier="electrical" skillvalue="-75" />
+      <SkillModifier skillidentifier="mechanical" skillvalue="-75" />
+      <sprite name="Aviator Glasses Wearable" texture="%ModDir%/Textures/ItemIcons.png" limb="Head" inheritlimbdepth="true" inheritscale="true" ignorelimbscale="true" scale="0.29" sourcerect="896,512,128,128" origin="0.52,0.525" />
+    </Wearable>
+  </Item>
+  <!-- Night Vision Goggles -->
+  <Item identifier="it_nvg" aliases="nightgoggles" scale="0.25" maxstacksize="1" category="Equipment" tags="smallitem" allowasextracargo="true" cargocontaineridentifier="metalcrate" impactsoundtag="impact_metal_light">
+    <PreferredContainer secondary="wrecksecarmcab" spawnprobability="0.02" />
+    <InventoryIcon texture="%ModDir%/Textures/ItemIcons.png" sourcerect="896,384,128,128" origin="0.5,0.5" />
+    <Sprite name="Night Vision Goggles" texture="%ModDir%/Textures/ItemIcons.png" sourcerect="896,384,128,128" origin="0.5,0.5" />
+    <Body width="70" height="60" density="15" />
+    <Price baseprice="200" soldbydefault="false">
+      <Price storeidentifier="merchantmilitary" sold="true" multiplier="1" maxavailable="1" />
+      <Price storeidentifier="merchantmine" sold="true" multiplier="1.5" maxavailable="1" />
+    </Price>
+    <Fabricate suitablefabricators="fabricator" requiredtime="80">
+      <RequiredSkill identifier="electrical" level="35" />
+      <RequiredSkill identifier="weapons" level="50" />
+      <RequiredItem identifier="fpgacircuit" />
+      <RequiredItem identifier="plastic" amount="2" />
+      <RequiredItem identifier="phosphorus" />
+    </Fabricate>
+    <Deconstruct time="15">
+      <Item identifier="copper" />
+      <Item identifier="silicon" />
+    </Deconstruct>
+    <Turret HudTint="15,90,15,60" drawhudwhenequipped="true">
+      <StatusEffect type="OnActive" target="this" HudTint="0,0,0,0" disabledeltatime="true" setvalue="true">
+        <Conditional hasstatustag="neq powered" />
+      </StatusEffect>
+      <StatusEffect type="OnActive" target="this" HudTint="15,90,15,60" disabledeltatime="true" setvalue="true">
+        <Conditional hasstatustag="powered" />
+      </StatusEffect>
+    </Turret>
+    <ItemContainer capacity="1" maxstacksize="1" hideitems="true" containedstateindicatorstyle="battery">
+      <Containable items="mobilebattery" />
+    </ItemContainer>
+    <Wearable slots="Any,Head" msg="ItemMsgPickUpSelect">
+      <StatusEffect type="OnWearing" target="Character" ObstructVisionAmount="0.3" setvalue="true" disabledeltatime="true" />
+      <StatusEffect type="OnWearing" target="Contained, Character" Condition="-0.4" comparison="And">
+        <Conditional hasstatustag="powered" targetcontainer="true" />
+        <Conditional IsDead="False" />
+      </StatusEffect>
+      <sprite name="Night Vision Goggles" texture="%ModDir%/Textures/ItemIcons.png" limb="Head" inheritlimbdepth="true" inheritscale="true" ignorelimbscale="true" scale="0.4" rotation="-3" origin="0.47,0.69" sourcerect="896,256,128,128">
+        <LightComponent LightColor="0,100,0,90" range="2000" IsOn="true" castshadows="true" powerconsumption="1">
+          <LightTexture texture="Content/Lights/pointlight_bounce.png" origin="0.5,0.5" />
+          <StatusEffect type="OnWearing" target="This" Voltage="1.0" setvalue="true" comparison="AND">
+            <Conditional IsDead="false" targetcontainer="true" />
+            <Conditional hasstatustag="powered" />
+            <Conditional IsLocalPlayer="true" targetcontainer="true" />
+          </StatusEffect>
+        </LightComponent>
+      </sprite>
+    </Wearable>
+    <CustomInterface canbeselected="true" drawhudwhenequipped="true">
+      <GuiFrame relativesize="0.12,0.08" anchor="BottomLeft" absoluteoffset="20,98" style="ItemUI" />
+      <TickBox text="On/Off">
+        <StatusEffect type="OnUse" target="This" tags="powered" duration="0.2">
+          <RequiredItem items="mobilebattery" type="Contained" />
+        </StatusEffect>
+      </TickBox>
+    </CustomInterface>
+  </Item>
+  <!-- Miscellenous Items -->
+  <!-- Eye Regeneration Jar (Thanks Lukako) -->
+  <Item identifier="it_eyejar" category="Equipment" tags="mediumitem,eyecontainer,refrigerated" cargocontaineridentifier="metalcrate" showcontentsintooltip="true" Scale="0.3" fireproof="true" impactsoundtag="impact_soft" isshootable="true">
+    <PreferredContainer primary="medcab" />
+    <Deconstruct time="20">
+      <Item identifier="silicon" />
+      <Item identifier="iron" />
+    </Deconstruct>
+    <Fabricate suitablefabricators="medicalfabricator" requiredtime="100">
+      <RequiredSkill identifier="medical" level="68" />
+      <Item identifier="silicon" />
+      <Item identifier="steel" />
+      <Item identifier="tonicliquid" />
+      <Item identifier="potassium" amount="2" />
+    </Fabricate>
+    <Price baseprice="400" soldbydefault="false">
+      <Price storeidentifier="merchantmedical" sold="true" maxavailable="1" />
+    </Price>
+    <InventoryIcon texture="%ModDir%/Textures/ItemIcons.png" sourcerect="768,896,128,128" origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/Textures/ItemIcons.png" depth="0.7" sourcerect="768,896,128,128" origin="0.5,0.5" />
+    <!-- Sprite Depth for Jar must be *below* the sprites for the Eyes. In my tests, I adjusted the eyes but changing the jar is easiest. I also made a bootleg jar that did not have the eye in it by default, this is also required.-->
+    <Body width="45" height="80" density="15" />
+    <Holdable slots="Any,RightHand,LeftHand" holdpos="0,-70" handle1="0,45" holdangle="0" msg="ItemMsgPickUpUse" canbeselected="false" canbepicked="true" pickkey="Use" PickingTime="1.0" allowswappingwhenpicked="false" attachable="true" aimable="true">
+      <StatusEffect type="OnUse" target="this" hideitems="false" setvalue="true" />
+      <!-- If placed, show items 
+            <StatusEffect
+                type="OnContained"
+                target="this"
+                hideitems="true"
+                setvalue="true" /> -->
+      <!-- If contained (player inventory, storage etc.) hide items. Prevents items from showing by default / when dropped (as they are always contained before being dropped) -->
+    </Holdable>
+    <ItemContainer capacity="0" canbeselected="true" msg="ItemMsgInteractSelect" itempos="70, -60" iteminterval="-20, 30">
+      <StatusEffect type="OnUse" target="this" hideitems="false" setvalue="true" />
+      <!-- Subcontainers allow moving 2 unique sprites vertically, since ItemInterval does not work for some reason in the Itemcontainer itself. -->
+      <GuiFrame relativesize="0.15,0.15" anchor="Center" style="ItemUI" />
+      <!-- Two subcontainers for two eyes - assuming they become individual items instead of 'transplants'. -->
+      <SubContainer capacity="1" maxstacksize="1">
+        <Containable items="eyejarcontainable" itempos="16, -25" rotation="55" />
+        <!-- Rotation to make them seem 'floating'. Just cosmetic.-->
+      </SubContainer>
+      <SubContainer capacity="1" maxstacksize="1">
+        <Containable items="eyejarcontainable" itempos="22, -15" rotation="-34" />
+        <!-- 2nd item always 'floats' higher in the jar. -->
+      </SubContainer>
+    </ItemContainer>
+  </Item>
+</Items>

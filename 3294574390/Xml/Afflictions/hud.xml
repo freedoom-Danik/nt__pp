@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Afflictions>
+  <!-- Lens Huds -->
+  <!-- Medical Lens -->
+  <Affliction identifier="lt_medical" showiconthreshold="0.99" showinhealthscannerthreshold="0" limbspecific="false" indicatorlimb="Head" maxstrength="2" type="lens_type" isbuff="true" healableinmedicalclinic="false" iconcolors="150,0,0,200">
+    <icon texture="%ModDir%/Textures/AfflictionIcons.png" origin="0.5,0.5" sourcerect="640,0,128,128" />
+    <Effect minstrength="0" maxstrength="2">
+      <StatValue stattype="MedicalSkillBonus" value="10" />
+    </Effect>
+  </Affliction>
+  <!-- Electrical Lens -->
+  <Affliction identifier="lt_electrical" showiconthreshold="0.99" showinhealthscannerthreshold="0" limbspecific="false" indicatorlimb="Head" maxstrength="2" type="lens_type" isbuff="true" healableinmedicalclinic="false" iconcolors="150,150,0,200">
+    <icon texture="%ModDir%/Textures/AfflictionIcons.png" origin="0.5,0.5" sourcerect="640,0,128,128" />
+    <Effect minstrength="0" maxstrength="2">
+      <StatValue stattype="ElectricalSkillBonus" value="10" />
+    </Effect>
+  </Affliction>
+  <!-- Night Vision Lens -->
+  <Affliction identifier="lt_night" limbspecific="false" indicatorlimb="Head" showiconthreshold="0.99" showinhealthscannerthreshold="0" maxstrength="2" type="lens_type" isbuff="true" healableinmedicalclinic="false" iconcolors="0,150,0,200">
+    <icon texture="%ModDir%/Textures/AfflictionIcons.png" origin="0.5,0.5" sourcerect="640,0,128,128" />
+    <Effect />
+  </Affliction>
+  <!-- Thermal Lens -->
+  <Affliction identifier="lt_thermal" limbspecific="false" indicatorlimb="Head" showiconthreshold="0.99" showinhealthscannerthreshold="0" maxstrength="2" type="lens_type" isbuff="true" healableinmedicalclinic="false" iconcolors="150,0,125,200">
+    <icon texture="%ModDir%/Textures/AfflictionIcons.png" origin="0.5,0.5" sourcerect="640,0,128,128" />
+    <Effect minstrength="0" maxstrength="2">
+      <StatValue stattype="WeaponsSkillBonus" value="10" />
+    </Effect>
+  </Affliction>
+  <!-- Digital Parasites (Cyber Eye Damage Symptoms) -->
+  <Affliction identifier="hud_parasite1" type="eye_mechanic" indicatorlimb="Head" limbspecific="false" maxstrength="2">
+    <Effect minstrength="0" maxstrength="2" strengthchange="-1" minafflictionoverlayalphamultiplier="0.0" maxafflictionoverlayalphamultiplier="0.7" ScreenEffectFluctuationFrequency="0.6" minradialdistort="0" maxradialdistort="0.5" mingrainstrength="0" maxgrainstrength="5" GrainColor="200,200,0,100">
+      <!-- local sfx -->
+      <StatusEffect target="Character">
+        <Conditional IsLocalPlayer="true" />
+        <Sound file="%ModDir%/Sounds/parasite1.ogg" />
+      </StatusEffect>
+    </Effect>
+  </Affliction>
+</Afflictions>
